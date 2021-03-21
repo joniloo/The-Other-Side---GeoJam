@@ -24,6 +24,7 @@ public class Pelaaja : MonoBehaviour
         characterController = GetComponent<CharacterController>();
         animator = GetComponent<Animator>();
 
+
     }
 
     void Update()
@@ -53,12 +54,13 @@ public class Pelaaja : MonoBehaviour
         }
 
         characterController.Move(moveDirection * Time.deltaTime);
-        animator.SetBool("walking", curSpeedY >= 0.01);
+        animator.SetBool("walking", curSpeedY >= 0.01 || -curSpeedY >= 0.01);
 
         if (Input.GetKeyDown(KeyCode.E) && characterController.isGrounded)
         {
             magic.Play();
             animator.SetTrigger("portal");
+ 
         }
     }
 }
