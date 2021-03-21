@@ -40,6 +40,7 @@ public class Pelaaja : MonoBehaviour
         if (Input.GetButton("Jump") && canMove && characterController.isGrounded)
         {
             moveDirection.y = jumpSpeed;
+            animator.SetTrigger("jump");
         }
         else
         {
@@ -54,7 +55,7 @@ public class Pelaaja : MonoBehaviour
         characterController.Move(moveDirection * Time.deltaTime);
         animator.SetBool("walking", curSpeedY >= 0.01);
 
-        if (Input.GetKeyDown(KeyCode.E))
+        if (Input.GetKeyDown(KeyCode.E) && characterController.isGrounded)
         {
             magic.Play();
             animator.SetTrigger("portal");
