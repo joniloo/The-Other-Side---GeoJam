@@ -16,10 +16,13 @@ public class Pelaaja : MonoBehaviour
     [HideInInspector]
     public bool canMove = true;
 
+    Animator animator;
+    public ParticleSystem magic;
    
     void Start()
     {
         characterController = GetComponent<CharacterController>();
+        animator = GetComponent<Animator>();
 
     }
 
@@ -48,8 +51,13 @@ public class Pelaaja : MonoBehaviour
             moveDirection.y -= gravity * Time.deltaTime;
         }
 
-
         characterController.Move(moveDirection * Time.deltaTime);
+        animator.SetBool("walking", curSpeedY >= 0.01);
 
+        if (Input.GetKeyDown(KeyCode.E))
+        {
+            magic.Play();
+            animator.SetTrigger("portal");
+        }
     }
 }
