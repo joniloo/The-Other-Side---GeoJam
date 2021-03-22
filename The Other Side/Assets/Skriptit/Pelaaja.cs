@@ -19,7 +19,7 @@ public class Pelaaja : MonoBehaviour
 
     Animator animator;
     public ParticleSystem magic;
-   
+
     void Start()
     {
         characterController = GetComponent<CharacterController>();
@@ -59,10 +59,13 @@ public class Pelaaja : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.E))
         {
-           // magic.Play();
-            animator.SetTrigger("portal");
+
+            if (characterController.isGrounded && curSpeedY <= 0f && -curSpeedY <= 0f)
+            {
+                animator.SetTrigger("portal");
+            }
             StartCoroutine(HeavenAndHell());
-          //  PelaajaManageri.instance.kamera.GetComponent<Kamera>().Portal();
+
         }
     }
     IEnumerator HeavenAndHell()
@@ -71,5 +74,5 @@ public class Pelaaja : MonoBehaviour
         magic.Play();
         PelaajaManageri.instance.kamera.GetComponent<Kamera>().Portal();
     }
-    
+
 }
