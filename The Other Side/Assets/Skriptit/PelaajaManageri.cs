@@ -17,7 +17,5 @@ public class PelaajaManageri : MonoBehaviour
 
     public GameObject pelaaja;
     public GameObject kamera;
-    public Material heavenMaterial;
-    public Material hellMaterial;
 
 }

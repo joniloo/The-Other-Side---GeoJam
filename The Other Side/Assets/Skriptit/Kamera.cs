@@ -6,7 +6,7 @@ using UnityEngine.PostProcessing;
 public class Kamera : MonoBehaviour
 {
     Camera _camera;
-    public bool heavenOn;
+    public bool heavenOn = true;
 
     public PostProcessingProfile hellProfile;
     public PostProcessingProfile heavenProfile;

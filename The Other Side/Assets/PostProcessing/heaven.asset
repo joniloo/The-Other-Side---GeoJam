@@ -98,11 +98,11 @@ MonoBehaviour:
       logMin: -8
       logMax: 4
   bloom:
-    m_Enabled: 1
+    m_Enabled: 0
     m_Settings:
       bloom:
-        intensity: 0.3
-        threshold: 2
+        intensity: 0.12
+        threshold: 3.18
         softKnee: 0.5
         radius: 4
         antiFlicker: 1
