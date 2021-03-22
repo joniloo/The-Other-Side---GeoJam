@@ -57,7 +57,7 @@ public class Pelaaja : MonoBehaviour
         characterController.Move(moveDirection * Time.deltaTime);
         animator.SetBool("walking", curSpeedY >= 0.01 || -curSpeedY >= 0.01);
 
-        if (Input.GetKeyDown(KeyCode.E) && characterController.isGrounded)
+        if (Input.GetKeyDown(KeyCode.E))
         {
            // magic.Play();
             animator.SetTrigger("portal");
