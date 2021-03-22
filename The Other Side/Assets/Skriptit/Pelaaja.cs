@@ -1,4 +1,5 @@
-
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 [RequireComponent(typeof(CharacterController))]
 public class Pelaaja : MonoBehaviour
@@ -58,9 +59,17 @@ public class Pelaaja : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.E) && characterController.isGrounded)
         {
-            magic.Play();
+           // magic.Play();
             animator.SetTrigger("portal");
- 
+            StartCoroutine(HeavenAndHell());
+          //  PelaajaManageri.instance.kamera.GetComponent<Kamera>().Portal();
         }
     }
+    IEnumerator HeavenAndHell()
+    {
+        yield return new WaitForSeconds(0.3f);
+        magic.Play();
+        PelaajaManageri.instance.kamera.GetComponent<Kamera>().Portal();
+    }
+    
 }

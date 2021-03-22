@@ -1,40 +1,38 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.PostProcessing;
 
 public class Kamera : MonoBehaviour
 {
     Camera _camera;
     public bool heavenOn;
 
-    public Material skyHeaven;
-    public Material skyHell;
+    public PostProcessingProfile hellProfile;
+    public PostProcessingProfile heavenProfile;
 
     private void Start()
     {
         _camera = Camera.main;
-        RenderSettings.skybox = skyHeaven;
+
     }
 
-   /* void Update()
+
+    public void Portal()
     {
-        if (Input.GetKeyDown(KeyCode.E))
-        {
 
             heavenOn = !heavenOn;
-        }
+        
 
         if (heavenOn)
         {
-            _camera.cullingMask = ~(1 << LayerMask.NameToLayer("heaven"));
-            //PelaajaManageri.instance.pelaaja.GetComponent<Renderer>().material.color = Color.white;
-            RenderSettings.skybox = skyHeaven;
-            DynamicGI.UpdateEnvironment();
+            GetComponent<PostProcessingBehaviour>().profile = heavenProfile;
         }
         else if (!heavenOn)
-            _camera.cullingMask = ~(1 << LayerMask.NameToLayer("hell"));
-         RenderSettings.skybox = skyHell;
-        DynamicGI.UpdateEnvironment();
-        //PelaajaManageri.instance.pelaaja.GetComponent<Renderer>().material.color = Color.red;
-    }*/
+        {
+
+            GetComponent<PostProcessingBehaviour>().profile = hellProfile;
+        }
+
+    }
 }
