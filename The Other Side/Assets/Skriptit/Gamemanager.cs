@@ -24,6 +24,9 @@ public class Gamemanager : MonoBehaviour
         _instance = this;
     }
 
+    public GameObject[] hellPieces;
+    public GameObject[] heavenPieces;
+
     private void Start()
     {
 
@@ -38,4 +41,46 @@ public class Gamemanager : MonoBehaviour
         PelaajaManageri.instance.pelaaja.GetComponent<CharacterController>().enabled = true;
         PelaajaManageri.instance.pelaaja.GetComponent<Pelaaja>().enabled = true;
     }
+
+    private void Update()
+    {
+        if(PelaajaManageri.instance.kamera.GetComponent<Kamera>().heavenOn)
+        {
+            foreach (GameObject piece in heavenPieces)
+            {
+                if (!piece.activeInHierarchy)
+                {
+                    piece.SetActive(true);
+                }
+            }
+
+            foreach (GameObject piecehell in hellPieces)
+            {
+                if (piecehell.activeInHierarchy)
+                {
+                    piecehell.SetActive(false);
+                }
+            }
+        }
+
+        else if (!PelaajaManageri.instance.kamera.GetComponent<Kamera>().heavenOn)
+        {
+            foreach (GameObject piece in heavenPieces)
+            {
+                if (piece.activeInHierarchy)
+                {
+                    piece.SetActive(false);
+                }
+            }
+
+            foreach (GameObject piecehell in hellPieces)
+            {
+                if (!piecehell.activeInHierarchy)
+                {
+                    piecehell.SetActive(true);
+                }
+            }
+        }
+    }
+
 }
