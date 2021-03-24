@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Gamemanager : MonoBehaviour
 {
@@ -27,6 +28,10 @@ public class Gamemanager : MonoBehaviour
     public GameObject[] hellPieces;
     public GameObject[] heavenPieces;
 
+    public bool timeIsRunning = true;
+    float timer;
+    public Text timertext;
+
     private void Start()
     {
 
@@ -44,7 +49,14 @@ public class Gamemanager : MonoBehaviour
 
     private void Update()
     {
-        if(PelaajaManageri.instance.kamera.GetComponent<Kamera>().heavenOn)
+        Timer();
+        Portalizer();
+        
+    }
+
+    void Portalizer()
+    {
+        if (PelaajaManageri.instance.kamera.GetComponent<Kamera>().heavenOn)
         {
             foreach (GameObject piece in heavenPieces)
             {
@@ -83,4 +95,18 @@ public class Gamemanager : MonoBehaviour
         }
     }
 
+    void Timer()
+    {
+
+        timertext.text = timer.ToString("f2");
+
+        if (timeIsRunning)
+        {
+
+            timer += Time.deltaTime;
+        }
+
+    }
 }
+
+
