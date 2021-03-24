@@ -42,7 +42,7 @@ public class Pelaaja : MonoBehaviour
         float movementDirectionY = moveDirection.y;
         moveDirection = (right * curSpeedY);
 
-        if (Input.GetButton("Jump") && canMove && characterController.isGrounded)
+        if (Input.GetKeyDown(KeyCode.UpArrow) || Input.GetKeyDown(KeyCode.W) && canMove && characterController.isGrounded)
         {
             moveDirection.y = jumpSpeed;
             animator.SetTrigger("jump");

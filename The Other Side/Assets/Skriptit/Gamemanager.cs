@@ -47,7 +47,7 @@ public class Gamemanager : MonoBehaviour
         PelaajaManageri.instance.pelaaja.GetComponent<Pelaaja>().enabled = false;
         portalSphere.SetActive(true);
         PelaajaManageri.instance.pelaaja.GetComponent<SkinnedMeshRenderer>().enabled = false;
-        Invoke("WakeUpThePlayer", 2f);
+        Invoke("WakeUpThePlayer", 1.5f);
 
     }
 
