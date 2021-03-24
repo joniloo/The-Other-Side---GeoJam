@@ -26,7 +26,7 @@ RenderSettings:
   m_AmbientIntensity: 1
   m_AmbientMode: 0
   m_SubtractiveShadowColor: {r: 0.46226418, g: 0.16746172, b: 0.1858752, a: 1}
-  m_SkyboxMaterial: {fileID: 2100000, guid: a4ff3235e716dfa45b7a1a6e7082cd9e, type: 2}
+  m_SkyboxMaterial: {fileID: 2100000, guid: a594f57e5e7382b43a6d2525724ca95e, type: 2}
   m_HaloStrength: 0.5
   m_FlareStrength: 1
   m_FlareFadeSpeed: 3
@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 1208407146}
-  m_IndirectSpecularColor: {r: 0.2884105, g: 0.05650992, b: 0.012679312, a: 1}
+  m_IndirectSpecularColor: {r: 0.6835247, g: 0.95972127, b: 1.0566883, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -97,7 +97,7 @@ LightmapSettings:
     m_ExportTrainingData: 0
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
-  m_LightingDataAsset: {fileID: 112000000, guid: 9f70ee826303d0542b5187ea1f600cb7, type: 2}
+  m_LightingDataAsset: {fileID: 112000000, guid: ea814cb2880e13f44bb478d708b05f14, type: 2}
   m_LightingSettings: {fileID: 4890085278179872738, guid: ed0a16666f448e747bfeaf7f66c7198d, type: 2}
 --- !u!196 &4
 NavMeshSettings:
@@ -5044,7 +5044,7 @@ MonoBehaviour:
   - {fileID: 1112474065127020546}
   heavenPieces:
   - {fileID: 5039217435564270064}
-  time_saver: taso_2_pisteet
+  time_saver: taso_3_pisteet
   timeIsRunning: 1
   timer: 0
   lasttimer: 0
@@ -12024,7 +12024,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   NextLevelName: level_3
-  time_saver: taso_2_pisteet
+  time_saver: taso_3_pisteet
 --- !u!4 &6065442119707692293
 Transform:
   m_ObjectHideFlags: 0
@@ -12377,7 +12377,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: f55a1b49ae0137d479c8017debdef205, type: 2}
+  - {fileID: 2100000, guid: b83dbe2e2385e4249809e54eec1aca9c, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
