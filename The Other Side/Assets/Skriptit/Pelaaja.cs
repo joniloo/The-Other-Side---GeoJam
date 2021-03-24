@@ -60,7 +60,7 @@ public class Pelaaja : MonoBehaviour
         characterController.Move(moveDirection * Time.deltaTime);
         animator.SetBool("walking", curSpeedY >= 0.01 || -curSpeedY >= 0.01);
 
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.E))
         {
 
             if (characterController.isGrounded && curSpeedY <= 0f && -curSpeedY <= 0f)
