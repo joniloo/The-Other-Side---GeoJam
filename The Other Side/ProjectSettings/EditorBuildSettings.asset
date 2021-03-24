@@ -15,6 +15,11 @@ EditorBuildSettings:
     path: Assets/Scenes/level_2.unity
     guid: 0c4db073c2fe64a4cba1c4d942642e52
   - enabled: 1
+<<<<<<< Updated upstream
     path: Assets/Scenes/level_3.unity
     guid: 1e7fa021803b1f742a3fb5e8b067d76d
+=======
+    path: Assets/Scenes/credit.unity
+    guid: b677947dada735243b6649ed54ff2037
+>>>>>>> Stashed changes
   m_configObjects: {}
