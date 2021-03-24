@@ -20,11 +20,14 @@ public class Pelaaja : MonoBehaviour
     Animator animator;
     public ParticleSystem magic;
 
+    Vector3 startPos;
+    Vector3 deathPos;
+ 
     void Start()
     {
         characterController = GetComponent<CharacterController>();
         animator = GetComponent<Animator>();
-
+        startPos = transform.position;
 
     }
 
@@ -75,4 +78,19 @@ public class Pelaaja : MonoBehaviour
         PelaajaManageri.instance.kamera.GetComponent<Kamera>().Portal();
     }
 
+    private void OnTriggerEnter(Collider other)
+    {
+        if(other.CompareTag("DeathFloor"))
+        {
+            deathPos = transform.position;
+            PlayerDeath();
+        }
+    }
+
+    void PlayerDeath()
+    {
+        Gamemanager.Instance.DisablePlayer();
+        transform.position = Vector3.Lerp(deathPos, startPos, 5f);
+
+    }
 }

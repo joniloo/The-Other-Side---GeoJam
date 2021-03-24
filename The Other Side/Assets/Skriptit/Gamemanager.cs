@@ -32,19 +32,31 @@ public class Gamemanager : MonoBehaviour
     float timer;
     public Text timertext;
 
+    public GameObject portalSphere;
+
     private void Start()
     {
+        DisablePlayer();
+        portalSphere.SetActive(true);
+        PelaajaManageri.instance.pelaaja.GetComponent<SkinnedMeshRenderer>().enabled = false;
+}
 
+    public void DisablePlayer()
+    {
         PelaajaManageri.instance.pelaaja.GetComponent<CharacterController>().enabled = false;
         PelaajaManageri.instance.pelaaja.GetComponent<Pelaaja>().enabled = false;
-
+        portalSphere.SetActive(true);
+        PelaajaManageri.instance.pelaaja.GetComponent<SkinnedMeshRenderer>().enabled = false;
         Invoke("WakeUpThePlayer", 2f);
+
     }
 
-    void WakeUpThePlayer()
+    public void WakeUpThePlayer()
     {
         PelaajaManageri.instance.pelaaja.GetComponent<CharacterController>().enabled = true;
         PelaajaManageri.instance.pelaaja.GetComponent<Pelaaja>().enabled = true;
+        PelaajaManageri.instance.pelaaja.GetComponent<SkinnedMeshRenderer>().enabled = true;
+        portalSphere.SetActive(false);
     }
 
     private void Update()
