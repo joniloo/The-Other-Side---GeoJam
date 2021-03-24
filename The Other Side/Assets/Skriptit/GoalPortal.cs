@@ -7,6 +7,7 @@ public class GoalPortal : MonoBehaviour
 {
 
     [SerializeField] private string NextLevelName;
+    [SerializeField] private string time_saver;
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player"))
@@ -19,7 +20,7 @@ public class GoalPortal : MonoBehaviour
     void WinLevel()
     {
         SceneManager.LoadScene(NextLevelName);
-        PlayerPrefs.SetFloat("level_1_timer", Gamemanager.Instance.timer);
+        PlayerPrefs.SetFloat(time_saver, Gamemanager.Instance.timer);
 
     }
 }

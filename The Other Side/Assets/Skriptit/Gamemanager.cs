@@ -23,14 +23,22 @@ public class Gamemanager : MonoBehaviour
     void Awake()
     {
         _instance = this;
+
+        if(PlayerPrefs.HasKey(time_saver))
+        {
+            lasttimer = PlayerPrefs.GetFloat(time_saver);
+
+        }
     }
 
     public GameObject[] hellPieces;
     public GameObject[] heavenPieces;
-
+    [SerializeField] private string time_saver;
     public bool timeIsRunning = true;
     public float timer;
+    public float lasttimer;
     public Text timertext;
+    public Text lasttimertext;
 
     public GameObject portalSphere;
 
@@ -39,7 +47,8 @@ public class Gamemanager : MonoBehaviour
         DisablePlayer();
         portalSphere.SetActive(true);
         PelaajaManageri.instance.pelaaja.GetComponent<SkinnedMeshRenderer>().enabled = false;
-}
+        lasttimertext.text = lasttimer.ToString("f2");
+    }
 
     public void DisablePlayer()
     {
