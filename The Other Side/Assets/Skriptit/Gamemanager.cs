@@ -29,7 +29,7 @@ public class Gamemanager : MonoBehaviour
     public GameObject[] heavenPieces;
 
     public bool timeIsRunning = true;
-    float timer;
+    public float timer;
     public Text timertext;
 
     public GameObject portalSphere;

@@ -1,9 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GoalPortal : MonoBehaviour
 {
+
+    [SerializeField] private string NextLevelName;
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player"))
@@ -15,7 +18,8 @@ public class GoalPortal : MonoBehaviour
 
     void WinLevel()
     {
-
+        SceneManager.LoadScene(NextLevelName);
+        PlayerPrefs.SetFloat("level_1_timer", Gamemanager.Instance.timer);
 
     }
 }
