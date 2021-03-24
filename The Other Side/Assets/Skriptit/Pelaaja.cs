@@ -60,7 +60,7 @@ public class Pelaaja : MonoBehaviour
         characterController.Move(moveDirection * Time.deltaTime);
         animator.SetBool("walking", curSpeedY >= 0.01 || -curSpeedY >= 0.01);
 
-        if (Input.GetKeyDown(KeyCode.E))
+        if (Input.GetKeyDown(KeyCode.Space))
         {
 
             if (characterController.isGrounded && curSpeedY <= 0f && -curSpeedY <= 0f)
@@ -89,8 +89,9 @@ public class Pelaaja : MonoBehaviour
 
     void PlayerDeath()
     {
+ 
         Gamemanager.Instance.DisablePlayer();
-        transform.position = Vector3.Lerp(deathPos, startPos, 5f);
+        transform.position = Vector3.Lerp(deathPos, startPos, 1f);
 
     }
 }
