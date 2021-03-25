@@ -20,7 +20,8 @@ public class Pelaaja : MonoBehaviour
 
     Animator animator;
     public ParticleSystem magic;
-
+    AudioSource audios;
+    public AudioClip jump;
     Vector3 startPos;
     Vector3 deathPos;
  
@@ -29,7 +30,7 @@ public class Pelaaja : MonoBehaviour
         characterController = GetComponent<CharacterController>();
         animator = GetComponent<Animator>();
         startPos = transform.position;
-
+        audios = GetComponent<AudioSource>();
     }
 
     void Update()
@@ -47,6 +48,7 @@ public class Pelaaja : MonoBehaviour
         {
             moveDirection.y = jumpSpeed;
             animator.SetTrigger("jump");
+            audios.PlayOneShot(jump);
         }
         else
         {
@@ -90,7 +92,8 @@ public class Pelaaja : MonoBehaviour
         if(other.CompareTag("DeathFloor"))
         {
             deathPos = transform.position;
-            PlayerDeath();
+            Äänimanageri.Instance.Explosion();
+            Invoke("PlayerDeath", 1f);
         }
     }
 

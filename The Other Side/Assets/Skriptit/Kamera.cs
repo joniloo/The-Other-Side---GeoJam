@@ -18,9 +18,11 @@ public class Kamera : MonoBehaviour
     public float Y_axis = 0.5f;
     public float X_axis = 0.5f;
 
+    AudioSource audios;
     private void Start()
     {
         _camera = Camera.main;
+        audios = GetComponent<AudioSource>();
 
     }
 
@@ -44,10 +46,11 @@ public class Kamera : MonoBehaviour
         if (heavenOn)
         {
             GetComponent<PostProcessingBehaviour>().profile = heavenProfile;
+            audios.Play();
         }
         else if (!heavenOn)
         {
-
+            audios.Play();
             GetComponent<PostProcessingBehaviour>().profile = hellProfile;
         }
 
