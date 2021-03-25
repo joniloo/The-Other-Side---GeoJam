@@ -16,6 +16,7 @@ public class Pelaaja : MonoBehaviour
     public Vector3 moveDirection = Vector3.zero;
     [HideInInspector]
     public bool canMove = true;
+    public bool canJump = true;
 
     Animator animator;
     public ParticleSystem magic;
@@ -55,6 +56,12 @@ public class Pelaaja : MonoBehaviour
         if (!characterController.isGrounded)
         {
             moveDirection.y -= gravity * Time.deltaTime;
+            canJump = false;
+        }
+        else
+        {
+            canJump = true;
+
         }
 
         characterController.Move(moveDirection * Time.deltaTime);
