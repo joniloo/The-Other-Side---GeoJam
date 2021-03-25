@@ -49,7 +49,7 @@ public class Pause : MonoBehaviour
 
     void PauseGame()
     {
-      
+
         Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true;
         PauseMenuUI.SetActive(true);
@@ -65,10 +65,9 @@ public class Pause : MonoBehaviour
         SceneManager.LoadScene("SampleScene");
     }
 
-
     public void GuitGame()
     {
-        Application.Quit();
+        SceneManager.LoadScene("Menu");
 
     }
 
