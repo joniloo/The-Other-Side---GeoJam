@@ -12340,7 +12340,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 868a7a7ee98fe5a46a153556c2e2b5d9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  NextLevelName: level_3
+  NextLevelName: Menu
   time_saver: taso_3_pisteet
 --- !u!4 &6065442119707692293
 Transform:
